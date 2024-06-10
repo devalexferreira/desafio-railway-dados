@@ -1,4 +1,4 @@
-package dev.alex.api.controller.exception;
+package dev.alex.api.controller;
 
 import dev.alex.api.model.Profile;
 import dev.alex.api.service.ProfileService;
@@ -18,9 +18,9 @@ public class ProfileController {
         this.profileService = profileService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Profile> findById(@PathVariable Long id) {
-        var user = profileService.findById(id);
+    @GetMapping("/{document}")
+    public ResponseEntity<Profile> findByDocument(@PathVariable String document) {
+        var user = profileService.findByDocument(document);
         return ResponseEntity.ok(user);
     }
 

@@ -6,6 +6,8 @@ public interface ProfileService {
 
     Profile findById(Long id);
 
+    Profile findByDocument(String document);
+
     Profile create(Profile profileToCreate);
 
 }

@@ -22,6 +22,15 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
+    public Profile findByDocument(String document) {
+        if(!profileRepository.existsByDocument(document)) {
+            throw  new IllegalArgumentException(("Usuario não encontrado"));
+        }
+        return profileRepository.findByDocument(document);
+    }
+
+
+    @Override
     public Profile create(Profile profileToCreate) {
         //if(profileToCreate.getId() != null && profileRepository.existsById(profileToCreate.getId())) {
             if(profileRepository.existsByDocument(profileToCreate.getDocument())) {
