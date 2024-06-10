@@ -1,8 +1,6 @@
 spring:
   datasource:
     url: jdbc:${DATABASE_URL}
-    username: ${PGUSER}
-    password: ${PGPASSWORD}
   jpa:
     open-in-view: false
     hibernate:
